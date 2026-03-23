@@ -6,7 +6,7 @@ import asyncdispatch
 import jester
 
 import router_utils
-import ".."/[types, formatters, utils]
+import ".."/[types, formatters, utils, http_pool]
 
 export asynchttpserver, asyncstreams, asyncfile, asyncnet
 export httpclient, os, strutils, asyncstreams, base64, re
