@@ -22,7 +22,7 @@ RUN nimble setup && nimble build -d:danger -d:lto -d:strip --mm:refc \
 
 FROM ubuntu:24.04
 WORKDIR /src/
-RUN apt-get update && apt-get install -y --no-install-recommends libpcre3 ca-certificates openssl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends libpcre3 ca-certificates openssl wget && rm -rf /var/lib/apt/lists/*
 COPY --from=nim /src/nitter/nitter ./
 COPY --from=nim /src/nitter/nitter.example.conf ./nitter.conf
 COPY --from=nim /src/nitter/public ./public

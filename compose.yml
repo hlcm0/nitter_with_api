@@ -3,11 +3,11 @@ services:
   nitter:
     build:
       context: .
-      dockerfile: Dockerfile.arm64 # Change to Dockerfile if you want to build for AMD64 architecture
-    image: nitter-local:arm64 # Change to nitter-local:amd64 if you built for AMD64 architecture
+      dockerfile: Dockerfile # Change to Dockerfile if you want to build for AMD64 architecture
+    image: nitter-local:amd64 # Change to nitter-local:amd64 if you built for AMD64 architecture
     container_name: nitter
     ports:
-      - "127.0.0.1:1145:1145"
+      - "0.0.0.0:1145:1145"
     volumes:
       - ./nitter.conf:/src/nitter.conf:Z,ro
       - ./sessions.jsonl:/src/sessions.jsonl:Z,ro # Run get_sessions.py to get the credentials
